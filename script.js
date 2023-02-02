@@ -9,32 +9,41 @@ function getComputerChoice(){
     }
 function playRound(playerSelection, computerSelection){
     playerSelection = playerSelection.toLowerCase();
-    if(playerSelection === computerSelection)
-        resultDiv.innerHTML =  `<br>It's a tie! ${playerSelection} and ${computerSelection}<br> Score: ${playerScore}:${computerScore}`;
+    if(playerSelection === computerSelection){
+        score.innerHTML = `${playerScore} : ${computerScore}`
+        resultDiv.innerHTML +=  `<span style="color: var(--yellow); display: inline;">It's a tie! ${playerSelection} and ${computerSelection}</span>`;
+}
     else if((computerSelection === "paper" && playerSelection === "rock") || (computerSelection === "rock" && playerSelection === "scissors") || (computerSelection === "scissors" && playerSelection === "paper")){
         computerScore++;
-        resultDiv.innerHTML = `<br>You Lose! ${computerSelection} beats ${playerSelection}<br> Score: ${playerScore}:${computerScore}`;
+        score.innerHTML = `${playerScore} : ${computerScore}`
+        resultDiv.innerHTML += `<span style="color: var(--red); display: inline;">You Lose! ${computerSelection} beats ${playerSelection}</span>`;
     }
     else{
         playerScore++;
-        resultDiv.innerHTML = `<br>You Win! ${playerSelection} beats ${computerSelection}<br> Score: ${playerScore}:${computerScore}`;
+        score.innerHTML = `${playerScore} : ${computerScore}`
+        resultDiv.innerHTML += `<span style="color: var(--green); display: inline;">You Win! ${playerSelection} beats ${computerSelection}</span> `;
     }
 }
-const resultDiv = document.querySelector('div');
+const resultDiv = document.querySelector('.result-pane');
 const buttons = document.querySelectorAll('button');
+const score = document.querySelector('.score-div');
 
 let playerScore = 0;
 let computerScore = 0;
 buttons.forEach(button => {
     button.addEventListener('click', () => {
-        playRound(button.textContent, getComputerChoice())
+        playRound(button.value, getComputerChoice())
         if(playerScore === 5 || computerScore === 5){
-            if(playerScore === 5)
-            resultDiv.innerHTML = `<br>Congratulations🎉.. You Win`;
-            else
-            resultDiv.innerHTML = `<br>You Lose`;
+            if(playerScore === 5){
             playerScore = 0;
             computerScore = 0;
+            resultDiv.innerHTML = `<br>Congratulations🎉.. You Win`;
+            }
+            else{
+            computerScore = 0;
+            playerScore = 0;
+            resultDiv.innerHTML = `<br>You Lose`;
+            }
         }
     })
 })
