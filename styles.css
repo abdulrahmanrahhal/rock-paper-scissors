@@ -61,10 +61,12 @@ body{
     }
 }
 .container{
+    width: 40rem;
+    margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    position: relative;
+    position: absolute;
     top: 50%;
     left: 50%;
     translate: -50% -50%;
@@ -121,10 +123,10 @@ body{
 }
 .result-pane{
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     width: 100%;
     flex-direction: column-reverse;
-    align-items: flex-end;
+    align-items: center;
     position: relative;
     overflow: hidden;
     height: 18rem;
