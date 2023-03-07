@@ -1,24 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="shortcut icon" href="./left-facing-first-32x32.png" type="image/x-icon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="shortcut icon"
+      href="./left-facing-first-32x32.png"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <script src="./script.js" defer></script>
     <title>Rock Paper Scissors</title>
-</head>
-<body>
-    <header class="header"><h1>Rock Paper Scissors</h1></header>
-    <div class="container">
-        <div class="score-div">0 : 0</div>
-        <div class="buttons">
-            <button class="btn" value="rock">✊</button>
-            <button class="btn" value="paper">✋</button>
-            <button class="btn" value="scissors">✌</button>
+  </head>
+  <body>
+    <header class="header">
+        <h1>Rock Paper Scissors</h1>
+    </header>
+    <main>
+        <div class="container">
+          <div class="score-div">0 : 0</div>
+          <div class="buttons">
+            <button class="btn" value="rock">
+                <img src="./rock.svg" alt="rock hand" srcset="">
+            </button>
+            <button class="btn" value="paper">
+                <img src="./lizard.svg" alt="paper hand" srcset="">
+            </button>
+            <button class="btn" value="scissors">
+                <img src="./scissors.svg" alt="scissors hand" srcset="">
+            </button>
+          </div>
+          <div class="result-wrapper border-yellow">
+            <h1 class="result-caption">Results</h1>
+            <div class="results-list"></div>
+          </div>
         </div>
-        <div class="result-pane"></div>
-    </div>
-</body>
+    </main>
+    <footer><p>Created by <a href="https://www.github.com/rahhaly" target="_blank">Abdulrahman</a>. See <a href="https://www.github.com/rahhaly/rock-paper-scissors" target="_blank">Source Code</a></p></footer>
+  </body>
 </html>
