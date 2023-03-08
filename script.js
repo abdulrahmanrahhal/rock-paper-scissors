@@ -12,12 +12,12 @@ const gameController = (() => {
 
   const checkWinner = () => {
     if (playerScore === 5) {
-      displayController.displayWinner('YOU');
+      displayController.displayWinner('YOU ARE THE WINNER');
       playerScore = 0;
       computerScore = 0;
       return;
     } else if (computerScore === 5) {
-      displayController.displayWinner('COMPUTER');
+      displayController.displayWinner('COMPUTER IS THE WINNER');
       playerScore = 0;
       computerScore = 0;
       return;
@@ -79,10 +79,10 @@ const displayController = (() => {
   const updateResult = () => {
     score.textContent = `${gameController.getPlayerScore()} : ${gameController.getComputerScore()}`;
   };
-  const displayWinner = (winnerName) => {
+  const displayWinner = (mes) => {
     cleanResults();
     winnerPanel.classList.add('show');
-    winnerPanel.innerHTML = `<p>${winnerName} IS THE WINNER.</p>`;
+    winnerPanel.innerHTML = `<p>${mes}</p>`;
     setTimeout(() => {
       winnerPanel.classList.remove('show');
       winnerPanel.textContent = '';
