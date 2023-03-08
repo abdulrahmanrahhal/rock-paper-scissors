@@ -11,13 +11,12 @@ const gameController = (() => {
   const getPlayerScore = () => playerScore;
 
   const checkWinner = () => {
-    if (playerScore === 5){
+    if (playerScore === 5) {
       displayController.displayWinner('YOU');
       playerScore = 0;
       computerScore = 0;
       return;
-    } 
-    else if (computerScore === 5){
+    } else if (computerScore === 5) {
       displayController.displayWinner('COMPUTER');
       playerScore = 0;
       computerScore = 0;
@@ -82,12 +81,12 @@ const displayController = (() => {
   };
   const displayWinner = (winnerName) => {
     cleanResults();
-    winnerPanel.innerHTML = `<p>${winnerName} ARE THE WINNER.</p>`
     winnerPanel.classList.add('show');
+    winnerPanel.innerHTML = `<p>${winnerName} ARE THE WINNER.</p>`;
     setTimeout(() => {
       winnerPanel.classList.remove('show');
+      winnerPanel.textContent = '';
     }, 2000);
-    winnerPanel.textContent = '';
   };
   buttons.forEach((btn) =>
     btn.addEventListener('click', (e) => {

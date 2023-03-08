@@ -1,7 +1,7 @@
 :root {
   --clr-primary-400: hsl(211, 100%, 16%);
   --clr-primary-300: hsl(220, 40%, 35%);
-  --clr-semi-primary-300: hsl(220 40% 35% / .5);
+  --clr-semi-primary-300: hsl(220 40% 35% / .7);
   --clr-primary-200: hsl(224, 47%, 70%);
   --clr-neutral-900: hsl(60, 28%, 92%);
   --clr-red: hsl(16, 88%, 69%);
@@ -10,10 +10,14 @@
 
   --ff-maven: 'Maven Pro', sans-serif;
 
+  --fw-400: 400;
+  --fw-700: 700;
+
   --fs-400: 1.5rem;
-  --fs-500: 2.1rem;
-  --fs-600: 3.2rem;
-  --fs-700: 4.3rem;
+  --fs-500: 2.2rem;
+  --fs-600: 3.3rem;
+  --fs-700: 4.8rem;
+  --fs-800: 6.8rem;
 
   --size-25: 5px;
   --size-50: 10px;
@@ -102,10 +106,14 @@ footer {
   flex-direction: column-reverse;
 }
 .winner {
+  display: none;
   position: absolute; 
   display: flex;
-
-  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-800);
+  font-weight: var(--fw-700);
+  height: 0;
   width: 100%;
   background-color: var(--clr-semi-primary-300);
   backdrop-filter: blur(5px);
@@ -113,4 +121,5 @@ footer {
 }
 div.winner.show {
   z-index: 999;
+  height: 100vh;
 }
