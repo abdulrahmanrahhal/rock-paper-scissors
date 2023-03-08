@@ -82,7 +82,7 @@ const displayController = (() => {
   const displayWinner = (winnerName) => {
     cleanResults();
     winnerPanel.classList.add('show');
-    winnerPanel.innerHTML = `<p>${winnerName} ARE THE WINNER.</p>`;
+    winnerPanel.innerHTML = `<p>${winnerName} IS THE WINNER.</p>`;
     setTimeout(() => {
       winnerPanel.classList.remove('show');
       winnerPanel.textContent = '';
