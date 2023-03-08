@@ -21,24 +21,25 @@
   </head>
   <body>
     <header class="header">
-        <h1>Rock Paper Scissors</h1>
+      <div class="winner"></div>
+      <h1>Rock Paper Scissors</h1>
     </header>
     <main>
         <div class="container">
-          <div class="score-div">0 : 0</div>
+          <div class="score">0 : 0</div>
           <div class="buttons">
             <button class="btn" value="rock">
-                <img src="./rock.svg" alt="rock hand" srcset="">
+                <img src="./rock.svg" alt="rock" srcset="">
             </button>
             <button class="btn" value="paper">
-                <img src="./lizard.svg" alt="paper hand" srcset="">
+                <img src="./lizard.svg" alt="paper" srcset="">
             </button>
             <button class="btn" value="scissors">
-                <img src="./scissors.svg" alt="scissors hand" srcset="">
+                <img src="./scissors.svg" alt="scissors" srcset="">
             </button>
           </div>
-          <div class="result-wrapper border-yellow">
-            <h1 class="result-caption">Results</h1>
+          <div class="result-wrapper">
+            <h1 class="result-header">Results</h1>
             <div class="results-list"></div>
           </div>
         </div>
